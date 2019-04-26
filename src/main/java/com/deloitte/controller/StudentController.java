@@ -22,12 +22,12 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Student getStudentById(@PathVariable("id") int id){
+    public Student getStudentById(@PathVariable("id") String id){
         return studentService.getStudentById(id);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteStudentById(@PathVariable("id") int id){
+    public void deleteStudentById(@PathVariable("id") String id){
         studentService.removeStudentById(id);
     }
 

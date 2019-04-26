@@ -7,9 +7,9 @@ import com.deloitte.entity.Student;
 public interface StudentDao {
     Collection<Student> getAllStudents();
 
-    Student getStudentById(int id);
+    Student getStudentById(String id);
 
-    void removeStudentById(int id);
+    void removeStudentById(String id);
 
     void updateStudent(Student student);
 

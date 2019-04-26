@@ -60,6 +60,9 @@ Thumbs.db
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
 
+#All idea
+.idea/
+
 ## File-based project format:
 *.iws
 

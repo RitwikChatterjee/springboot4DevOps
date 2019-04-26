@@ -12,7 +12,7 @@ public class StudentServiceTest {
 	public void test() {
 		
 		StudentService sSvc = new StudentService();
-		Student st1 = sSvc.getStudentById(1);
+		Student st1 = sSvc.getStudentById("1");
 		
 		assertEquals(1, st1.getId());
 		assertEquals("Said", st1.getName());

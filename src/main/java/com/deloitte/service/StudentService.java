@@ -13,19 +13,19 @@ import java.util.Collection;
 public class StudentService {
 
     @Autowired
-    @Qualifier("fakeData")
+    @Qualifier("mongoData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
         return this.studentDao.getAllStudents();
     }
 
-    public Student getStudentById(int id){
+    public Student getStudentById(String id){
         return this.studentDao.getStudentById(id);
     }
 
 
-    public void removeStudentById(int id) {
+    public void removeStudentById(String id) {
         this.studentDao.removeStudentById(id);
     }
 
