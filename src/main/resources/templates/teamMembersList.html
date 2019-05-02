@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+<head>
+    <title>Team Members List</title>
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+        <h3>
+            <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
+        </h3>
+        <h2>Team Members List</h2>
+        <div class="table-responsive">
+            <table class="table" id="teammember-table">
+                <thead>
+                <tr>
+                    <th>Team Member Name</th>
+                    <th>Team Member Role</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="teammember : ${teamMembersList}">
+                    <td><a th:text="${teammember.name}" th:href="@{'/teammembers/' + ${teammember.id}}"></a></td>
+                    <td th:text="${teammember.role}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <p>
+            <a href="/ui/teammembers-add" class="link">Add New TeamMembers</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

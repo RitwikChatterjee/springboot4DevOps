@@ -1,7 +1,7 @@
 package com.deloitte.controller;
 
-import com.deloitte.entity.Student;
-import com.deloitte.service.StudentService;
+import com.deloitte.entity.TeamMember;
+import com.deloitte.service.TeamMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,27 +12,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/ui")
 public class UIController {
     @Autowired
-    StudentService studentService;
+    TeamMemberService teamMemberService;
 
-    @RequestMapping("/students")
-    public String studentsList(Model model) {
-        model.addAttribute("studentsList", studentService.getAllStudents());
-        return "studentsList";
+    @RequestMapping("/teammembers")
+    public String teamMembersList(Model model) {
+        model.addAttribute("teamMembersList", teamMemberService.getAllTeamMembers());
+        return "teamMembersList";
     }
 
-    @RequestMapping("/students-add")
-    public String studentsAdd(Model model) {
-        return "studentsAdd";
+    @RequestMapping("/teammembers-add")
+    public String teamMembersAdd(Model model) {
+        return "teamMembersAdd";
     }
 
-    @RequestMapping("/students-save")
-    public String save(@RequestParam String name, @RequestParam String course) {
-        Student student = new Student();
-        student.setName(name);
-        student.setCourse(course);
-        studentService.insertStudent(student);
+    @RequestMapping("/teammembers-save")
+    public String save(@RequestParam String name, @RequestParam String role) {
+        TeamMember teamMember = new TeamMember();
+        teamMember.setName(name);
+        teamMember.setRole(role);
+        teamMemberService.insertTeamMember(teamMember);
 
-        return "redirect:/ui/students" ;
+        return "redirect:/ui/teammembers" ;
     }
 
 }
