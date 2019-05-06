@@ -54,6 +54,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+        <finalName>devops-demo</finalName>
     </build>
     <packaging>war</packaging>
 

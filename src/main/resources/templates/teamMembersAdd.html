@@ -10,10 +10,10 @@
 <div layout:fragment="content" class="row">
     <div class="col-xs-8 col-md-8">
         <h3>
-            <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
+            <a th:href="@{'/'}" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
         </h3>
         <h2>Add New Team Members</h2>
-        <form action="/ui/teammembers-save">
+        <form action="teammembers-save">
             <div class="form-group">
                 <label for="name">Team Member Name:</label>
                 <input id="name" type="text" class="form-control" name="name" />
