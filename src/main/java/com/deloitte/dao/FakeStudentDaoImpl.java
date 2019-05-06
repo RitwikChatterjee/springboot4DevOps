@@ -1,6 +1,6 @@
 package com.deloitte.dao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import com.deloitte.entity.Student;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-@Qualifier("fakeData")
+@Profile("local")
 public class FakeStudentDaoImpl implements StudentDao {
 
     private static Map<String, Student> students;
