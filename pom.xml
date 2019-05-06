@@ -34,6 +34,12 @@
             <version>2.1.3.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <properties>
@@ -49,5 +55,6 @@
             </plugin>
         </plugins>
     </build>
+    <packaging>war</packaging>
 
 </project>
