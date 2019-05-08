@@ -1,18 +1,20 @@
 <!DOCTYPE HTML>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="default">
+<!--<html lang="en"-->
+      <!--xmlns:th="http://www.thymeleaf.org"-->
+      <!--xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+      <!--layout:decorator="default">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Team Members List</title>
+    <title>Deloitte DevOps Application</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<div layout:fragment="content" class="row">
+<!--<div layout:fragment="content" class="row">-->
+<a th:href="@{'/'}" class="nav_link"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
+<div class="row">
     <div class="col-xs-8 col-md-8">
-        <h3>
-            <a th:href="@{'/'}" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
-        </h3>
-        <h2>Team Members List</h2>
+        <h2>Deloitte DevOps Demo Application</h2>
+        <h3>Team Members List</h3>
         <div class="table-responsive">
             <table class="table" id="teammember-table">
                 <thead>
@@ -31,7 +33,7 @@
         </div>
         <br/>
         <p>
-            <a th:href="@{'/ui/teammembers-add'}" class="link">Add New TeamMembers</a>
+            <a th:href="@{'/ui/teammembers-add'}" class="func_link">Add New TeamMembers</a>
         </p>
     </div>
 </div>
