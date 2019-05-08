@@ -1,12 +1,33 @@
 body {
-  padding-top: 50px;
+  padding-top: 10px;
   background-color: lightblue;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+h2{
+    text-align: center;
 }
-.link{
-  font-family: calibri;
-  font-size:15px;
+.nav_link {
+  font-family: verdana;
+  font-size: 10px;
 }
+.func_link {
+  font-size: 12px;
+}
+table {
+    padding-left: 5px;
+    width: 60%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #def;
+    border-collapse: collapse;
+    text-align: left;
+}
+th {
+  background-color: DarkTurquoise;
+  color: white;
+}
+td {
+  border-bottom: 1px solid #ddd;
+  font-family: verdana;
+  font-size: 12px;
+}
+tr:nth-child(even) {background-color: lightgray;}
