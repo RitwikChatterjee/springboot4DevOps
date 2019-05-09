@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -14,18 +15,18 @@ public class UIController {
     @Autowired
     TeamMemberService teamMemberService;
 
-    @RequestMapping("/teammembers")
+    @RequestMapping(value="/teammembers", method = RequestMethod.GET)
     public String teamMembersList(Model model) {
         model.addAttribute("teamMembersList", teamMemberService.getAllTeamMembers());
         return "teamMembersList";
     }
 
-    @RequestMapping("/teammembers-add")
+    @RequestMapping(value = "/teammembers-add", method = RequestMethod.GET)
     public String teamMembersAdd(Model model) {
         return "teamMembersAdd";
     }
 
-    @RequestMapping("/teammembers-save")
+    @RequestMapping(value = "/teammembers-save", method = RequestMethod.GET)
     public String save(@RequestParam String name, @RequestParam String role) {
         TeamMember teamMember = new TeamMember();
         teamMember.setName(name);
