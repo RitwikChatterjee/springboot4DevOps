@@ -91,3 +91,7 @@ fabric.properties
 .classpath
 .project
 .settings/
+
+# Local batch files run #
+#########################
+*.bat
