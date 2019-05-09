@@ -17,14 +17,12 @@ public class FakeTeamMemberDaoImpl implements TeamMemberDao {
 
     static {
 
-        teamMembers = new HashMap<String, TeamMember>(){
+        teamMembers = new HashMap<String, TeamMember>();
 
-            {
-                put("1", new TeamMember("1", "Chintan", "Project Lead"));
-                put("2", new TeamMember("2","Sultan", "DevOps Lead"));
-                put("3", new TeamMember("3","Nayeem", "Sponsor"));
-            }
-        };
+        teamMembers.put("1", new TeamMember("1", "Chintan", "Project Lead"));
+        teamMembers.put("2", new TeamMember("2","Sultan", "DevOps Lead"));
+        teamMembers.put("3", new TeamMember("3","Nayeem", "Sponsor"));
+
     }
 
     @Override
