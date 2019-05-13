@@ -11,7 +11,7 @@
 <body>
 <!--<div layout:fragment="content" class="row">-->
 <a th:href="@{'/'}" class="nav_link"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
-<div><span class="version-box"></span> <span class="version-text">Version 1.0</span></div>
+<div><span class="version-box"></span> <span class="version-text" th:text="${uiVersion}"></span></div>
 <div class="row">
     <div class="col-xs-8 col-md-8">
         <h2>Deloitte DevOps Demo Application</h2>
