@@ -12,6 +12,23 @@ h2{
 .func_link {
   font-size: 12px;
 }
+.version-box {
+  width: 20px;
+  height: 20px;
+  background-color: #cfc ;
+  padding-left: 30px ;
+  position: relative;
+  left: 70%;
+  border-style: outset;
+  border-width: 1px;
+}
+.version-text {
+  font-family: verdana;
+  font-size: 12px;
+  text-align: right;
+  position: relative;
+  left: 72%;
+}
 table {
     padding-left: 5px;
     width: 60%;
