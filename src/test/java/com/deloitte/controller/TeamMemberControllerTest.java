@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -40,32 +41,28 @@ public class TeamMemberControllerTest {
 	@Test
 	public void testGetAllTeamMembers() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/teammembers").accept(MediaType.APPLICATION_JSON))
+		.andDo(print())
 		.andExpect(status().isOk())
 		.andExpect(MockMvcResultMatchers.jsonPath("$.*", Matchers.hasSize(3)));
 	}
 
 	@Test
 	public void testGetTeamMemberById() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/teammembers/1").accept(MediaType.APPLICATION_JSON))
+
+		TeamMember teamMember2Retrieve = new TeamMember();
+		//TODO: Set the team member to retrieve by a call to getAll
+		teamMember2Retrieve.setId("1");
+
+		mockMvc.perform(MockMvcRequestBuilders.get("/teammembers/{id}",teamMember2Retrieve.getId()).accept(MediaType.APPLICATION_JSON))
+		.andDo(print())
 		.andExpect(status().isOk())
+		.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(teamMember2Retrieve.getId()))
 		.andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("Chintan")));
 	}
 
 	@Test
-	public void testDeleteTeamMemberById() {
-//		TODO: Write implementation
-//		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testUpdateTeamMemberById() {
-//		TODO: Write implementation
-//		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testInsertTeamMember() throws Exception {
-		TeamMember teamMember = new TeamMember("Ritwik", "App lead");
+		TeamMember teamMember = new TeamMember("JUnitTest", "Test lead");
 		String jsonRequest = om.writeValueAsString(teamMember);
 
 /*
@@ -75,15 +72,46 @@ public class TeamMemberControllerTest {
 		TeamMember teamMembersBefore = om.readValue(getAllContent, TeamMember.class );
 */
 
+		MvcResult mvcResult = mockMvc.perform(post("/teammembers").content(jsonRequest).contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
 
-		MvcResult mvcResult = mockMvc.perform(post("/teammembers").content(jsonRequest).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk()).andReturn();
-
-/*
-		MvcResult getAllMvcResultAfter = mockMvc.perform(MockMvcRequestBuilders.get("/teammembers").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk()).andReturn();
-		int getAllSizeAfter = getAllMvcResultAfter.getResponse().getContentLength();
-		Assert.assertEquals(getAllSizeBefore+1, getAllSizeAfter);
-*/
 	}
+
+	@Test
+	public void testUpdateTeamMemberById() throws Exception {
+
+		TeamMember teamMember2Updt = new TeamMember();
+		//TODO: Set the team member to retrieve by a call to getAll
+		teamMember2Updt.setId("2");
+		teamMember2Updt.setName("UpdatedName");
+		teamMember2Updt.setRole("UpdatedRole");
+
+		String jsonRequest = om.writeValueAsString(teamMember2Updt);
+
+		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.put("/teammembers/{id}", teamMember2Updt.getId()).content(jsonRequest).contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andReturn();
+
+	}
+
+	@Test
+	public void testDeleteTeamMemberById() throws Exception {
+
+		TeamMember teamMember2Delete = new TeamMember();
+		//TODO: Set the team member to retrieve by a call to getAll
+		teamMember2Delete.setId("1");
+
+		mockMvc.perform(MockMvcRequestBuilders.delete("/teammembers/{id}",teamMember2Delete.getId()).accept(MediaType.APPLICATION_JSON))
+				.andDo(print())
+				.andExpect(status().isOk());
+
+			//TODO: Update code to check user does not exists
+//				.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(teamMember2Delete.getId()))
+//				.andExpect(MockMvcResultMatchers.jsonPath("$.name", Matchers.is("Chintan")));
+
+
+	}
+
 
 }
