@@ -12,7 +12,6 @@ import java.util.Collection;
 public class TeamMemberService {
 
     @Autowired
-    @Qualifier("fakeData")
     private TeamMemberDao teamMemberDao;
 
     public Collection<TeamMember> getAllTeamMembers(){
