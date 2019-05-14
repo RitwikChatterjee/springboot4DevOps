@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 
 @Repository
-@Profile("test")
+//@Profile("test")
 public class MongoTeamMemberDaoImpl implements TeamMemberDao {
 
     @Autowired
