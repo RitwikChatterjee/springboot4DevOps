@@ -30,7 +30,7 @@ public class TeamMemberController {
         teamMemberService.removeTeamMemberById(id);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateTeamMemberById(@RequestBody TeamMember teamMember){
         teamMemberService.updateTeamMember(teamMember);
     }
