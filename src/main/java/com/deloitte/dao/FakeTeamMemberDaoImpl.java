@@ -2,6 +2,7 @@ package com.deloitte.dao;
 
 import com.deloitte.entity.TeamMember;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
@@ -10,7 +11,7 @@ import java.util.Map;
 import java.util.Random;
 
 @Repository
-@Qualifier("fakeData")
+@Profile("local")
 public class FakeTeamMemberDaoImpl implements TeamMemberDao {
 
     private static Map<String, TeamMember> teamMembers;
