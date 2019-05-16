@@ -24,7 +24,7 @@
     <div class="col-xs-8 col-md-8">
         <h2>Deloitte DevOps Demo Application</h2>
         <h3>Team Members Details </h3>
-        <form name="modify-form" action="/ui/teammembers-modify">
+        <form name="modify-form" th:action="@{'/ui/teammembers-modify'}">
             <table class="table" id="teammember-table">
                 <tr>
                     <th>Team Member Name</th>
@@ -42,7 +42,7 @@
             <p/>
             <button type="submit" class="btn">Modify</button>
         </form>
-        <form id="delete-form" action="/ui/teammembers-delete" method="get">
+        <form id="delete-form" th:action="@{'/ui/teammembers-delete'}" method="get">
             <input id="Id" type="hidden" class="form-control" name="Id" th:value="${teamMember.id}" />
         </form>
         <button class="btn" onclick="confirmDelete()">Delete</button>
