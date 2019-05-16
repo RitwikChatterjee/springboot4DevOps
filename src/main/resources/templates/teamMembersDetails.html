@@ -7,6 +7,14 @@
 <head>
     <title>Deloitte DevOps Application</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script language="JavaScript">
+        function confirmDelete(){
+            var resp = confirm("Are you sure you want to delete the team member?");
+            if(resp){
+                document.getElementById("delete-form").submit();
+            }
+        }
+    </script>
 </head>
 <body>
 <!--<div layout:fragment="content" class="row">-->
@@ -15,25 +23,29 @@
 <div class="row">
     <div class="col-xs-8 col-md-8">
         <h2>Deloitte DevOps Demo Application</h2>
-        <h3>Add New Team Members</h3>
-        <form action="teammembers-save">
+        <h3>Team Members Details </h3>
+        <form name="modify-form" action="/ui/teammembers-modify">
             <table class="table" id="teammember-table">
                 <tr>
                     <th>Team Member Name</th>
                     <td>
-                        <input id="name" type="text" class="form-control" name="name" />
+                        <input id="teamMemberId" type="hidden" class="form-control" name="teamMemberId" th:value="${teamMember.id}" /><span class="data-list" th:text="${teamMember.name}"></span>
                     </td>
                 </tr>
                 <tr>
                     <th>Team Member Role</th>
                     <td>
-                        <input id="role" type="text" class="form-control" name="role" />
+                        <span th:text="${teamMember.role}"></span>
                     </td>
                 </tr>
             </table>
             <p/>
-            <button type="submit" class="btn">Save</button>
+            <button type="submit" class="btn">Modify</button>
         </form>
+        <form id="delete-form" action="/ui/teammembers-delete" method="get">
+            <input id="Id" type="hidden" class="form-control" name="Id" th:value="${teamMember.id}" />
+        </form>
+        <button class="btn" onclick="confirmDelete()">Delete</button>
     </div>
 </div>
 </body>

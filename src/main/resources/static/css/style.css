@@ -12,6 +12,10 @@ h2{
 .func_link {
   font-size: 12px;
 }
+.btn {
+ background-color: gray;
+ font-size: 12px;
+}
 .version-box {
   width: 20px;
   height: 20px;
@@ -28,6 +32,11 @@ h2{
   text-align: right;
   position: relative;
   left: 72%;
+}
+.data-list {
+  font-family: verdana;
+  font-size: 12px;
+  text-align: right;
 }
 table {
     padding-left: 5px;
