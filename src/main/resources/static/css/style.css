@@ -16,6 +16,10 @@ h2{
  background-color: gray;
  font-size: 12px;
 }
+.footer-copyright {
+  font-family: verdana;
+  font-size: 8px;
+}
 .version-box {
   width: 20px;
   height: 20px;

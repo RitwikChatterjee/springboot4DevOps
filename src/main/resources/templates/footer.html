@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div th:fragment="footer-copyright" th:align="center" class="footer-copyright">
+    &copy;
+    <span th:text="${#temporals.format(#temporals.createNow(), 'yyyy')}">
+        2019
+      </span>
+    <span>Deloitte DevOps Demo App</span>
+</div>
+<div th:fragment="footer-nav" th:align="center">
+    <a th:href="@{'/'}" class="nav_link">
+        <span class="glyphicon glyphicon-plus-sign"></span>Home &nbsp;
+    </a>
+    <a th:href="@{'/ui/teammembers'}" class="nav_link">
+        <span class="glyphicon glyphicon-plus-sign"></span>Team Member List
+        &nbsp;
+    </a>
+    <a th:href="@{'/ui/teammembers-add'}" class="nav_link">
+        <span class="glyphicon glyphicon-plus-sign"></span>Add New Team Members
+        &nbsp;
+    </a>
+    <span th:text="${@environment.getProperty('app.version')}"></span>
+</div>
+</body>
+</html>
