@@ -7,6 +7,7 @@
 <head>
     <title>Deloitte DevOps Application</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script language="JavaScript" type="text/javascript" th:src="@{/js/uiscripts.js}"></script>
 </head>
 <body>
 <!--<div layout:fragment="content" class="row">-->
@@ -32,7 +33,7 @@
                 </tr>
             </table>
             <p/>
-            <button type="submit" class="btn btn-success">Save</button>
+            <button type="submit" class="btn btn-success" onclick="return validateForm();">Save</button>
         </form>
     </div>
 </div>

@@ -7,14 +7,7 @@
 <head>
     <title>Deloitte DevOps Application</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    <script language="JavaScript">
-        function confirmDelete(){
-            var resp = confirm("Are you sure you want to delete the team member?");
-            if(resp){
-                document.getElementById("delete-form").submit();
-            }
-        }
-    </script>
+    <script language="JavaScript" type="text/javascript" th:src="@{/js/uiscripts.js}"></script>
 </head>
 <body>
 <!--<div layout:fragment="content" class="row">-->
