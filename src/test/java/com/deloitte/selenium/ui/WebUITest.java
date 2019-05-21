@@ -43,7 +43,7 @@ public class WebUITest {
         driver.findElement(By.linkText("Team Members List")).click();
 
         // Ensure existence of text tags on the List page
-        Assert.assertEquals("Add New TeamMembers", driver.findElement(By.partialLinkText("Add New")).getText() );
+        Assert.assertEquals("Add New Team Members", driver.findElement(By.partialLinkText("Add New")).getText() );
         Assert.assertEquals("Team Member Name" , driver.findElements(By.tagName("th")).get(0).getText());
         Assert.assertEquals("Team Member Role", driver.findElements(By.tagName("th")).get(1).getText() );
     }
@@ -53,7 +53,7 @@ public class WebUITest {
         //Go to Team Member List page by clicking on link
         driver.findElement(By.linkText("Team Members List")).click();
         //Go to Team Member Add page by clicking on link
-        driver.findElement(By.linkText("Add New TeamMembers")).click();
+        driver.findElement(By.linkText("Add New Team Members")).click();
 
         // Ensure existence of text tags on the Add page
         Assert.assertEquals("Team Member Name", driver.findElements(By.tagName("th")).get(0).getText());
