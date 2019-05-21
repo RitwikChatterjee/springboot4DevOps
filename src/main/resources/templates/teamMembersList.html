@@ -10,8 +10,8 @@
 </head>
 <body>
 <!--<div layout:fragment="content" class="row">-->
-<a th:href="@{'/'}" class="nav_link"><span class="glyphicon glyphicon-plus-sign"></span>Home</a>
 <div><span class="version-box"></span> <span class="version-text" th:text="${uiVersion}"></span></div>
+<div th:replace="fragments ::header-nav"></div>
 <div class="row">
     <div class="col-xs-8 col-md-8">
         <h2>Deloitte DevOps Demo Application</h2>
@@ -35,7 +35,7 @@
         <br/>
     </div>
 </div>
-<div th:replace="footer :: footer-nav"></div>
-<div th:replace="footer :: footer-copyright"></div>
+<p></p>
+<div th:replace="fragments ::footer-copyright"></div>
 </body>
 </html>

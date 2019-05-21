@@ -8,6 +8,8 @@ h2{
 .nav_link {
   font-family: verdana;
   font-size: 10px;
+  color: gray;
+  text-decoration: none;
 }
 .func_link {
   font-size: 12px;

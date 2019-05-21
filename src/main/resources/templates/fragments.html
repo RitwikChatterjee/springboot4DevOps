@@ -12,18 +12,19 @@
       </span>
     <span>Deloitte DevOps Demo App</span>
 </div>
-<div th:fragment="footer-nav" th:align="center">
+<div th:fragment="header-nav" th:align="left">
     <a th:href="@{'/'}" class="nav_link">
-        <span class="glyphicon glyphicon-plus-sign"></span>Home &nbsp;
+        Home
     </a>
+    &nbsp;
     <a th:href="@{'/ui/teammembers'}" class="nav_link">
-        <span class="glyphicon glyphicon-plus-sign"></span>Team Member List
-        &nbsp;
+        Team Member List
     </a>
+    &nbsp;
     <a th:href="@{'/ui/teammembers-add'}" class="nav_link">
-        <span class="glyphicon glyphicon-plus-sign"></span>Add New Team Members
-        &nbsp;
+        Add New Team Members
     </a>
+    &nbsp;
     <span th:text="${@environment.getProperty('app.version')}"></span>
 </div>
 </body>
