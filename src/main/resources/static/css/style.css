@@ -1,12 +1,16 @@
 body {
   padding-top: 10px;
-  background-color: lightblue;
+  background-color: #ffffe6;
 }
 h2{
     text-align: center;
+	font-family: arial;
+}
+h3{
+	font-family: arial;
 }
 .nav_link {
-  font-family: verdana;
+  font-family: arial;
   font-size: 10px;
   color: gray;
   text-decoration: none;
@@ -15,17 +19,19 @@ h2{
   font-size: 12px;
 }
 .btn {
- background-color: gray;
+ background-color: #666666;
  font-size: 12px;
+ font-weight: bold;
+ color: white;
 }
 .footer-copyright {
-  font-family: verdana;
+  font-family: arial;
   font-size: 8px;
 }
 .version-box {
   width: 20px;
   height: 20px;
-  background-color: #cfc ;
+  background-color: #1aff1a ;
   padding-left: 30px ;
   position: relative;
   left: 70%;
@@ -33,33 +39,46 @@ h2{
   border-width: 1px;
 }
 .version-text {
-  font-family: verdana;
+  font-family: arial;
   font-size: 12px;
   text-align: right;
   position: relative;
   left: 72%;
 }
 .data-list {
-  font-family: verdana;
+  font-family: arial;
   font-size: 12px;
   text-align: right;
+}
+.hyper-data{
+  font-family: arial;
+  font-size: 12px;
+  text-align: right;
+  color: #0073e6;
+  text-decoration: none;
+}
+input[type=text] {
+  margin: auto;
+  width: 95%;
 }
 table {
     padding-left: 5px;
     width: 60%;
     border-width: 1px;
     border-style: solid;
-    border-color: #def;
+    border-color: gray;
     border-collapse: collapse;
     text-align: left;
 }
 th {
-  background-color: DarkTurquoise;
+  background-color: #004d99;
   color: white;
+  font-family: arial;
 }
 td {
   border-bottom: 1px solid #ddd;
-  font-family: verdana;
+  font-family: arial;
   font-size: 12px;
 }
 tr:nth-child(even) {background-color: lightgray;}
+tr:nth-child(odd) {background-color: white;}

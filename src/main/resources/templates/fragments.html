@@ -16,16 +16,15 @@
     <a th:href="@{'/'}" class="nav_link">
         Home
     </a>
-    &nbsp;
+    &nbsp; | &nbsp;
     <a th:href="@{'/ui/teammembers'}" class="nav_link">
         Team Member List
     </a>
-    &nbsp;
+    &nbsp; | &nbsp;
     <a th:href="@{'/ui/teammembers-add'}" class="nav_link">
         Add New Team Members
     </a>
     &nbsp;
-    <span th:text="${@environment.getProperty('app.version')}"></span>
 </div>
 </body>
 </html>
