@@ -59,16 +59,30 @@ h3{
 }
 .body-text{
   font-family: arial;
-  font-size: 12px;
+  font-size: 14px;
 }
 .success-txt{
   font-family: arial;
   font-size: 12px;
   color: green;
 }
+.prominent-text{
+	text-align:center;
+	font-family: arial;
+	font-size: 16px;
+	font-weight: bold;
+}
 input[type=text] {
   margin: auto;
   width: 95%;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 100%;
+  height: auto;
 }
 table {
     padding-left: 5px;
