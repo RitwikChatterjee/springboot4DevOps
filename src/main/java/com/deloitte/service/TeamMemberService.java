@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 @Service
@@ -33,5 +34,17 @@ public class TeamMemberService {
 
     public void insertTeamMember(TeamMember teamMember) {
         this.teamMemberDao.insertTeamMemberToDb(teamMember);
+    }
+
+    public void resetTeamMember(ArrayList<TeamMember> teamMembers) {
+
+        // First delete all team members
+        this.teamMemberDao.deleteAllTeamMember();
+
+        // Then add new team members
+        for (TeamMember teamMember : teamMembers){
+            insertTeamMember(teamMember);
+        }
+
     }
 }

@@ -38,4 +38,7 @@ public class MongoTeamMemberDaoImpl implements TeamMemberDao {
     public void insertTeamMemberToDb(TeamMember teamMember) {
         repo.insert(teamMember);
     }
+
+    @Override
+    public void deleteAllTeamMember () {repo.deleteAll();}
 }
