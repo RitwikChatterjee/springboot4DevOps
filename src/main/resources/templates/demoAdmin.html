@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<!--<html lang="en"-->
+<!--xmlns:th="http://www.thymeleaf.org"-->
+<!--xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--layout:decorator="default">-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Deloitte DevOps Application</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script language="JavaScript" type="text/javascript" th:src="@{/js/uiscripts.js}"></script>
+</head>
+<body>
+<!--<div layout:fragment="content" class="row">-->
+<div><span class="version-box"></span> <span class="version-text" th:text="${uiVersion}"></span></div>
+<div th:replace="fragments ::header-nav"></div>
+<div class="row">
+    <div class="col-xs-8 col-md-8">
+        <h2>Deloitte DevOps Demo Application</h2>
+        <h3>Demo Administration Page </h3>
+        <p></p>
+        <div class="body-text">This page gives you behind the scenes admin functionality. Please be careful as it can impact testing and delete data</div>
+        <p></p>
+        <span class="success-txt" th:text="${successMessage}"></span>
+        <form id="reset-form" th:action="@{'/ui/demoadmin-reset'}" method="get">
+            <button class="btn" onclick="return confirmResetAllData();">Reset ALL Data</button>
+        </form>
+    </div>
+</div>
+<p></p>
+<div th:replace="fragments ::footer-copyright"></div>
+</body>
+</html>

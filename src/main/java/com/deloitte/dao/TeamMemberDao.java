@@ -14,4 +14,6 @@ public interface TeamMemberDao {
     void updateTeamMember(TeamMember student);
 
     void insertTeamMemberToDb(TeamMember student);
+
+    void deleteAllTeamMember();
 }

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+
 @Controller
 @RequestMapping("/ui")
 public class UIController {
@@ -19,6 +21,9 @@ public class UIController {
 
     @Value("${uiVersion}")
     String uiVersion;
+
+    @Value("${sampleData}")
+    String sampleData;
 
     @RequestMapping(value="/teammembers", method = RequestMethod.GET)
     public String teamMembersList(Model model) {
@@ -74,4 +79,35 @@ public class UIController {
         return "redirect:/ui/teammembers" ;
     }
 
+    @RequestMapping(value = "/demoadmin", method = RequestMethod.GET)
+    public String demoAdmin(Model model) {
+        model.addAttribute("uiVersion", uiVersion);
+        model.addAttribute("sampleData", sampleData);
+
+        //TODO: Populate sample data on page
+
+        return "demoAdmin";
+    }
+
+    @RequestMapping(value = "/demoadmin-reset", method = RequestMethod.GET)
+    public String demoAdminReset(Model model) {
+        model.addAttribute("uiVersion", uiVersion);
+        model.addAttribute("sampleData", sampleData);
+
+        System.out.println(sampleData);
+
+        // Set Sample team members TODO: Read from property file
+        TeamMember teamMember1 = new TeamMember("Chintan Dalwadi", "Lead Architect");
+        TeamMember teamMember2 = new TeamMember("Sultan Mohammed", "Lead Developer");
+
+        ArrayList<TeamMember> teamMembers = new ArrayList<TeamMember>();
+        teamMembers.add(teamMember1);
+        teamMembers.add(teamMember2);
+
+        teamMemberService.resetTeamMember(teamMembers);
+
+        model.addAttribute("successMessage", "DB Successfully reset!");
+
+        return "demoAdmin";
+    }
 }
