@@ -45,6 +45,15 @@ public class TeamMemberService {
         for (TeamMember teamMember : teamMembers){
             insertTeamMember(teamMember);
         }
+    }
+    public void deleteAllTeamMembers() {
+        this.teamMemberDao.deleteAllTeamMember();
+    }
 
+    public void insertMultiTeamMembers (ArrayList<TeamMember> teamMembers) {
+        // Add new team members
+        for (TeamMember teamMember : teamMembers){
+            insertTeamMember(teamMember);
+        }
     }
 }

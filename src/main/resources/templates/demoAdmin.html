@@ -21,8 +21,13 @@
         <div class="body-text">This page gives you behind the scenes admin functionality. Please be careful as it can impact testing and delete data</div>
         <p></p>
         <span class="success-txt" th:text="${successMessage}"></span>
-        <form id="reset-form" th:action="@{'/ui/demoadmin-reset'}" method="get">
-            <button class="btn" onclick="return confirmResetAllData();">Reset ALL Data</button>
+        <p/>
+        <form id="delete-form" th:action="@{'/ui/demoadmin-deleteall'}" method="get">
+            <button class="btn" onclick="return confirmDeleteAllData();">Delete ALL Data</button>
+        </form>
+        <p/>
+        <form id="reset-form" th:action="@{'/ui/demoadmin-sampledata'}" method="get">
+            <button class="btn" onclick="return confirmInsertSampleData();">Insert Sample Data</button>
         </form>
     </div>
 </div>

@@ -84,7 +84,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-table {
+.table {
     padding-left: 5px;
     width: 60%;
     border-width: 1px;

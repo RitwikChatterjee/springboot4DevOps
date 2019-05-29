@@ -28,3 +28,19 @@ function confirmResetAllData(){
     }
     return false;
 }
+
+function confirmDeleteAllData(){
+    var resp = confirm("Are you sure you want to delete ALL data? This will delete all test data so far");
+    if(resp){
+        return true;
+    }
+    return false;
+}
+
+function confirmInsertSampleData(){
+    var resp = confirm("Are you sure you want to insert sample data?");
+    if(resp){
+        return true;
+    }
+    return false;
+}

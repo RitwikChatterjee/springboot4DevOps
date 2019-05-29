@@ -110,4 +110,39 @@ public class UIController {
 
         return "demoAdmin";
     }
+
+    @RequestMapping(value = "/demoadmin-deleteall", method = RequestMethod.GET)
+    public String demoAdminDeleteAll(Model model) {
+        model.addAttribute("uiVersion", uiVersion);
+        model.addAttribute("sampleData", sampleData);
+
+        teamMemberService.deleteAllTeamMembers();
+
+        model.addAttribute("successMessage", "DB Successfully cleaned!");
+
+        return "demoAdmin";
+    }
+
+    @RequestMapping(value = "/demoadmin-sampledata", method = RequestMethod.GET)
+    public String demoAdminSampleData(Model model) {
+        model.addAttribute("uiVersion", uiVersion);
+        model.addAttribute("sampleData", sampleData);
+
+        System.out.println(sampleData);
+
+        // Set Sample team members TODO: Read from property file
+        TeamMember teamMember1 = new TeamMember("Chintan Dalwadi", "Lead Architect");
+        TeamMember teamMember2 = new TeamMember("Sultan Mohammed", "Lead Developer");
+
+        ArrayList<TeamMember> teamMembers = new ArrayList<TeamMember>();
+        teamMembers.add(teamMember1);
+        teamMembers.add(teamMember2);
+
+        teamMemberService.insertMultiTeamMembers(teamMembers);
+
+        model.addAttribute("successMessage", "DB Successfully updated with sample data!");
+
+        return "demoAdmin";
+    }
+
 }
